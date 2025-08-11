@@ -57,7 +57,7 @@ const generateFullDayTableData = (inputs) => {
 
       const READY_TIME = 15,
         BREAK_DURATION = 30,
-        DUTY_WORK_TIME = 465,
+        DUTY_WORK_TIME = 480,
         MAX_WORK_BEFORE_BREAK = 240,
         MIN_WORK_BEFORE_BREAK = 150;
       const NO_BREAK_START = timeToMinutes("07:00"),
