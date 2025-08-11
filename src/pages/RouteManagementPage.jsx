@@ -19,7 +19,7 @@ export default function RouteManagementPage() {
     const fetchRoutes = async () => {
         try {
             // IMPORTANT: Replace this with your actual live Render backend URL
-            const response = await axios.get('https://your-bus-planner-api.onrender.com/api/routes');
+            const response = await axios.get('https://my-bus-planner-api.onrender.com/api/routes');
             
             // This check ensures we only try to update the state if the API returns a valid array.
             if (Array.isArray(response.data)) {
@@ -49,7 +49,7 @@ export default function RouteManagementPage() {
             payload.downTurnoutKm = 0;
         }
         // IMPORTANT: Replace this with your actual live Render backend URL
-        const API_BASE_URL = 'https://your-bus-planner-api.onrender.com/api/routes';
+        const API_BASE_URL = 'https://my-bus-planner-api.onrender.com/api/routes';
         const method = isEditing ? 'put' : 'post';
         const url = isEditing ? `${API_BASE_URL}/${payload._id}` : API_BASE_URL;
         try {
@@ -72,7 +72,7 @@ export default function RouteManagementPage() {
         if (window.confirm('Are you sure?')) {
             try {
                  // IMPORTANT: Replace this with your actual live Render backend URL
-                await axios.delete(`https://your-bus-planner-api.onrender.com/api/routes/${id}`);
+                await axios.delete(`https://my-bus-planner-api.onrender.com/api/routes/${id}`);
                 fetchRoutes();
             } catch (err) {
                 setError('Failed to delete.');
