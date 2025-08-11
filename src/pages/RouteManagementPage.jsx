@@ -13,7 +13,7 @@ export default function RouteManagementPage() {
 
     useEffect(() => { fetchRoutes(); }, []);
 
-    const fetchRoutes = async () => { try { const response = await axios.get('/api/routes'); setRoutes(response.data); } catch (err) { setError('Failed to fetch routes.'); } };
+    const fetchRoutes = async () => { try { const response = await axios.get('https://my-bus-planner-api.onrender.com/api/routes'); setRoutes(response.data); } catch (err) { setError('Failed to fetch routes.'); } };
 
     const handleInputChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -55,7 +55,7 @@ export default function RouteManagementPage() {
         setShowModal(true);
     };
 
-    const handleDelete = async (id) => { if (window.confirm('Are you sure?')) { try { await axios.delete(`/api/routes/${id}`); fetchRoutes(); } catch (err) { setError('Failed to delete.'); } } };
+    const handleDelete = async (id) => { if (window.confirm('Are you sure?')) { try { await axios.delete(`https://my-bus-planner-api.onrender.com/api/routes/${id}`); fetchRoutes(); } catch (err) { setError('Failed to delete.'); } } };
 
     const handleAddNew = () => {
         setCurrentRoute({
